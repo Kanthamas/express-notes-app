@@ -1,0 +1,27 @@
+[
+	{
+		"id": "519758b5-0a8e-4f05-99c7-28512139234f",
+		"name": "John",
+		"lastname": "Doe",
+		"position": "Developer"
+	},
+	{
+		"id": "a19fe674-448f-4cd9-ab28-0b403670ed23",
+		"name": "Bob",
+		"lastname": "Brown",
+		"position": "Developer"
+	},
+	{
+		"id": "d76bbe9b-f72d-4486-a24b-befa097e8ca1",
+		"name": "Frank",
+		"lastname": "Wilson",
+		"position": "Developer"
+	},
+
+	{
+		"id": "0316ecd6-108a-4f59-870f-7f13dc78ce52",
+		"name": "Kitty",
+		"lastname": "Mars",
+		"position": "QA"
+	}
+]

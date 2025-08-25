@@ -1,0 +1,19 @@
+{
+	"name": "express-02-notes-app",
+	"version": "1.0.0",
+	"main": "server.js",
+	"scripts": {
+		"start": "node --env-file=.env server.js",
+		"dev": "node --watch --env-file=.env server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"description": "",
+	"dependencies": {
+		"express": "^5.1.0",
+		"cors": "^2.8.5",
+		"uuid": "^11.1.0"
+	}
+}

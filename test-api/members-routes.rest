@@ -1,0 +1,47 @@
+### /notes
+
+@BASE_URL = http://localhost
+@PORT = 3100
+@API = {{BASE_URL}}:{{PORT}}
+
+### POST /notes (Add new member)
+POST {{API}}/notes
+Content-Type: application/json
+
+{
+    "title": "Example Note 03",
+    "content": "Some random text.",
+    "tags": ["test", "normal", "yellow"]
+}
+
+### GET /notes (Get all notes)
+GET {{API}}/notes
+
+### DELETE /notes/:noteId (Delete a member)
+@noteId = 3094694a-e67b-4455-89c4-947bed5fc10d
+DELETE  {{API}}/notes/{{noteId}}
+
+### PUT /notes/:noteId (Update a member )
+PUT  {{API}}/notes/{{noteId}}
+Content-Type: application/json
+
+{
+    "title": "Example Note PUT 01",
+    "content": "Some random text for PUT Testing.",
+    "tags": ["test", "urgent", "red"]
+}
+
+### PATCH /notes/:noteId (Partially update a member)
+PATCH  {{API}}/notes/{{noteId}}
+Content-Type: application/json
+
+{
+    "title": "PATCH Testing Title"
+}
+
+### 404 Test - route does not exist
+GET {{API}}/not-found-route
+
+### 500 Test - force server error
+# Example: POST without required fields (title & content missing)
+GET {{API}}/error-test
