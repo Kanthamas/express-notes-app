@@ -4,6 +4,9 @@
 @PORT = 3100
 @API = {{BASE_URL}}:{{PORT}}
 
+### GET /healthy (health check)
+GET {{API}}/healthy
+
 ### POST /notes (Add new member)
 POST {{API}}/notes
 Content-Type: application/json
@@ -18,7 +21,7 @@ Content-Type: application/json
 GET {{API}}/notes
 
 ### DELETE /notes/:noteId (Delete a member)
-@noteId = 3094694a-e67b-4455-89c4-947bed5fc10d
+@noteId = 731636e6-2c64-42b0-91eb-e45d6f307418
 DELETE  {{API}}/notes/{{noteId}}
 
 ### PUT /notes/:noteId (Update a member )
@@ -36,7 +39,7 @@ PATCH  {{API}}/notes/{{noteId}}
 Content-Type: application/json
 
 {
-    "title": "PATCH Testing Title"
+     "title": "Example Note PATCH Testing 01"
 }
 
 ### 404 Test - route does not exist
