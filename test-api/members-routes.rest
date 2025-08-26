@@ -12,16 +12,16 @@ POST {{API}}/notes
 Content-Type: application/json
 
 {
-    "title": "Example Note 03",
+    "title": "Example Note 05",
     "content": "Some random text.",
-    "tags": ["test", "normal", "yellow"]
+    "tags": ["test", "normal", "green"]
 }
 
 ### GET /notes (Get all notes)
 GET {{API}}/notes
 
 ### DELETE /notes/:noteId (Delete a member)
-@noteId = 2785bae4-bef5-4b7a-9289-36ddf2ebb236
+@noteId = 68ad7d52e94ea7036df4777f
 DELETE  {{API}}/notes/{{noteId}}
 
 ### PUT /notes/:noteId (Update a member )
@@ -29,7 +29,7 @@ PUT  {{API}}/notes/{{noteId}}
 Content-Type: application/json
 
 {
-    "title": "Example Note PUT 01",
+    "title": "Example Note PUT 03",
     "content": "Some random text for PUT Testing.",
     "tags": ["test", "urgent", "red"]
 }
@@ -39,7 +39,7 @@ PATCH  {{API}}/notes/{{noteId}}
 Content-Type: application/json
 
 {
-     "title": "Example Note PATCH Testing 01"
+    "title": "Example Note PATCH Testing 01"
 }
 
 ### 404 Test - route does not exist

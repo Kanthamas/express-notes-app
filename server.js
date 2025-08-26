@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import chalk from "chalk";
-import { connectMongoDB } from "./src/config/databases/mongodb.js";
+import { connectMongoDB } from "./src/api/v1/config/databases/mongodb.js";
 import noteApiV1 from "./src/api/v1/routes.js";
 
 const PORT = process.env.PORT || 4000;
