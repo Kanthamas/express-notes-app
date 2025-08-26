@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import noteApiV1 from "./api/v1/routes.js";
+import noteApiV1 from "./src/api/v1/routes.js";
 
 const PORT = process.env.PORT || 4000;
 const app = express();

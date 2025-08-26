@@ -21,7 +21,7 @@ Content-Type: application/json
 GET {{API}}/notes
 
 ### DELETE /notes/:noteId (Delete a member)
-@noteId = 731636e6-2c64-42b0-91eb-e45d6f307418
+@noteId = 2785bae4-bef5-4b7a-9289-36ddf2ebb236
 DELETE  {{API}}/notes/{{noteId}}
 
 ### PUT /notes/:noteId (Update a member )
