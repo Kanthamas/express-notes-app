@@ -16,7 +16,7 @@ async function startServer() {
 		cors({
 			origin: ["http://localhost:5173", "http://localhost:5174"],
 		})
-	);
+	);	
 	if (process.env.NODE_ENV !== "production") {
 		app.use(morgan("dev"));
 	} else {

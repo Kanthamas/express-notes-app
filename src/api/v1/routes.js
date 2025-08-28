@@ -10,8 +10,6 @@ import {
 
 const router = Router();
 
-let notes = [];
-
 router.get("/healthy", (req, res, next) => {
 	try {
 		const uptimeSeconds = process.uptime();
