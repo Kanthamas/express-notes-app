@@ -2,6 +2,7 @@ import { Schema, model } from "mongoose";
 
 const noteSchema = new Schema(
 	{
+		userId: { type: String, required: true },
 		title: { type: String, require: true },
 		content: { type: String, require: true },
 		tags: { type: [String], default: [] },
@@ -9,6 +10,6 @@ const noteSchema = new Schema(
 	{ timestamps: true }
 );
 
-const Note = model("Note", noteSchema)
+const Note = model("Note", noteSchema);
 
-export default Note
+export default Note;

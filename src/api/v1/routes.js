@@ -8,9 +8,10 @@ import {
 	patchNote,
 } from "./controllers/note.controller.js";
 
+
 const router = Router();
 
-router.get("/healthy", (req, res, next) => {
+/* router.get("/healthy", (req, res, next) => {
 	try {
 		const uptimeSeconds = process.uptime();
 
@@ -22,30 +23,30 @@ router.get("/healthy", (req, res, next) => {
 	} catch (error) {
 		next(error);
 	}
-});
+}); */
 
-router.get("/", (req, res, next) => {
+/* router.get("/", (req, res, next) => {
 	try {
 		res.send("Hello Client, I'm your server.");
 	} catch (error) {
 		next(error);
 	}
-});
+}); */
 
 // Routes: /notes
-router.post("/notes", createNote);
+router.post("/", createNote);
 
-router.get("/notes", getAllNotes);
+router.get("/", getAllNotes);
 
-router.delete("/notes/:noteId", deleteNote);
+router.delete("/:noteId", deleteNote);
 
-router.put("/notes/:noteId", updateNote);
+router.put("/:noteId", updateNote);
 
-router.patch("/notes/:noteId", patchNote);
+router.patch("/:noteId", patchNote);
 
 // Testing Route for 500
-router.get("/error-test", (req, res, next) => {
+/* router.get("/error-test", (req, res, next) => {
 	throw new Error("Forced server error for testing");
-});
+}); */
 
 export default router;

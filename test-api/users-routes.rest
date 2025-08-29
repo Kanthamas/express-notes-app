@@ -1,0 +1,66 @@
+### /users
+
+@BASE_URL = http://localhost
+@PORT = 3100
+@API = {{BASE_URL}}:{{PORT}}
+
+### POST /signup (Create a new user)
+POST {{API}}/signup
+Content-Type: application/json
+
+{
+    "fullName": "John Doe 12",
+    "email": "johndoe12@email.com",
+    "password": "johnPassword"
+}
+
+### POST /login (Login)
+POST {{API}}/login
+Content-Type: application/json
+
+{
+    "email": "johndoe12@email.com",
+    "password": "johnPassword"
+}
+
+### GET /verify (Verify token)
+GET {{API}}/verify
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGIwMTdjYTc0M2EyMWVhYzVlNWE1MzkiLCJpYXQiOjE3NTY0NTIzOTUsImV4cCI6MTc1NjQ2MzE5NX0.s57fXEjgJufwGHTf0mGR2YPDs3m57V82Go8bUGXXgrg
+POST {{API}}/logout
+
+
+### GET /users (Get all users)
+### TO-DO
+GET {{API}}/users
+
+### DELETE /users/:userId (Delete a member)
+### TO-DO
+@userId = 68ad7d52e94ea7036df4777f
+DELETE  {{API}}/users/{{userId}}
+
+### PUT /users/:userId (Update a member )
+### TO-DO
+PUT  {{API}}/users/{{userId}}
+Content-Type: application/json
+
+{
+    "title": "Example Note PUT 03",
+    "content": "Some random text for PUT Testing.",
+    "tags": ["test", "urgent", "red"]
+}
+
+### PATCH /users/:userId (Partially update a member)
+### TO-DO
+PATCH  {{API}}/users/{{userId}}
+Content-Type: application/json
+
+{
+    "title": "Example Note PATCH Testing 01"
+}
+
+### 404 Test - route does not exist
+GET {{API}}/not-found-route
+
+### 500 Test - force server error
+# Example: POST without required fields (title & content missing)
+GET {{API}}/error-test

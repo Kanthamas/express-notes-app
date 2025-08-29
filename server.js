@@ -1,9 +1,14 @@
 import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import chalk from "chalk";
 import { connectMongoDB } from "./src/api/v1/config/databases/mongodb.js";
-import noteApiV1 from "./src/api/v1/routes.js";
+import userRoutes from "./src/api/v1/routes/user.routes.js";
+import noteRoutes from "./src/api/v1/routes.js";
+import { authUser } from "./src/api/v1/middlewares/authUser.js";
+import { notFoundErrorHandler } from "./src/api/v1/errors/notFoundErrorHandler.js";
+import { centralizedErrorHandler } from "./src/api/v1/errors/centalizedErrorHandler.js";
 
 const PORT = process.env.PORT || 4000;
 
@@ -12,11 +17,15 @@ async function startServer() {
 
 	// Middlewares
 	app.use(express.json());
+
 	app.use(
 		cors({
 			origin: ["http://localhost:5173", "http://localhost:5174"],
 		})
-	);	
+	);
+
+	app.use(cookieParser());
+
 	if (process.env.NODE_ENV !== "production") {
 		app.use(morgan("dev"));
 	} else {
@@ -24,30 +33,13 @@ async function startServer() {
 	}
 
 	// Routes
-	app.use("/", noteApiV1);
+	app.use("/", userRoutes);
+	app.use("/notes", authUser, noteRoutes);
 
 	// Error Handlers
-	app.use((req, res) => {
-		res.status(404).json({
-			error: true,
-			status: 404,
-			message: "Resource not found",
-		});
-	});
+	app.use(notFoundErrorHandler);
 
-	app.use((err, req, res, next) => {
-		const statusCode = err.status || 500;
-		if (statusCode >= 500 && process.env.NODE_ENV !== "production") {
-			console.error(err.stack);
-		} else {
-			console.error(err.message);
-		}
-		res.status(err.status || 500).json({
-			error: true,
-			status: statusCode,
-			message: err.message || "Internal Server Error",
-		});
-	});
+	app.use(centralizedErrorHandler);
 
 	// Server
 	try {
