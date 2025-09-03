@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 
 const UserSchema = new Schema(
 	{
-		fullName: { type: String, requireก: true },
+		fullName: { type: String, required: true },
 		email: { type: String, unique: true, required: true },
 		password: { type: String, required: true },
 	},
@@ -16,6 +16,7 @@ UserSchema.pre("save", async function (next) {
 	next();
 });
 
+// Reuse model if already compiled (important for Vitest)
 const User = model("User", UserSchema);
 
 export default User;

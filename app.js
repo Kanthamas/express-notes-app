@@ -2,8 +2,11 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
+
+import healthRoutes from "./src/api/v1/routes/health.routes.js"
 import userRoutes from "./src/api/v1/routes/user.routes.js";
 import noteRoutes from "./src/api/v1/routes.js";
+
 import { authUser } from "./src/api/v1/middlewares/authUser.js";
 import { notFoundErrorHandler } from "./src/api/v1/errors/notFoundErrorHandler.js";
 import { centralizedErrorHandler } from "./src/api/v1/errors/centalizedErrorHandler.js";
@@ -28,13 +31,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 // Health check route
-app.get("/health", (req, res) => {
-	res.status(200).json({
-		error: false,
-		message: "API is healthy -- ready to serve",
-		data: null,
-	});
-});
+app.use(healthRoutes)
 
 // Routes
 app.use("/", userRoutes);
