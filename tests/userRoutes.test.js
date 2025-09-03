@@ -2,7 +2,6 @@ import { describe, it, expect } from "vitest";
 import request from "supertest";
 import app from "../app.js";
 import User from "../src/api/v1/models/user.model.js";
-import { bcrypt } from "bcrypt";
 
 describe("User Routes:  POST /signup", () => {
 	it("should create a new user successfully", async () => {
