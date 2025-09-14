@@ -6,6 +6,7 @@ import morgan from "morgan";
 import healthRoutes from "./src/api/v1/routes/health.routes.js"
 import userRoutes from "./src/api/v1/routes/user.routes.js";
 import noteRoutes from "./src/api/v1/routes.js";
+import uploadRoutes from "./src/api/v1/routes/upload.routes.js"
 
 import { authUser } from "./src/api/v1/middlewares/authUser.js";
 import { notFoundErrorHandler } from "./src/api/v1/errors/notFoundErrorHandler.js";
@@ -36,6 +37,7 @@ app.use(healthRoutes)
 // Routes
 app.use("/", userRoutes);
 app.use("/notes", authUser, noteRoutes);
+app.use("/upload", uploadRoutes)
 
 // Error Handlers
 app.use(notFoundErrorHandler);
