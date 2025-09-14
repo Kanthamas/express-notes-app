@@ -9,26 +9,26 @@ GET {{API}}/healthy
 
 ### POST /notes (Add new member)
 POST {{API}}/notes
-Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGIxNjYyNDAzZjcwNThhMzdiZGRmOWQiLCJpYXQiOjE3NTY0NTY0OTAsImV4cCI6MTc1NjQ2NzI5MH0.4zEgkFPOjuc0unTLG8zQNySBqNNvTPrML7YYoWiKEOg
+Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGIxNjYyNDAzZjcwNThhMzdiZGRmOWQiLCJpYXQiOjE3NTc4MzkwNTcsImV4cCI6MTc1Nzg0OTg1N30.NVKPPqbwEo7tz12ymkaPKpmeEQqoaKmYGygEJT11qDY
 Content-Type: application/json
 
 {
-    "title": "Example Note 03",
+    "title": "Example Note 106",
     "content": "Some random text.",
-    "tags": ["test", "normal", "green"]
+    "tags": [ "urgent", "green"]
 }
 
 ### GET /notes (Get all notes)
 GET {{API}}/notes
-Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGIxNjYyNDAzZjcwNThhMzdiZGRmOWQiLCJpYXQiOjE3NTY0NTY0OTAsImV4cCI6MTc1NjQ2NzI5MH0.4zEgkFPOjuc0unTLG8zQNySBqNNvTPrML7YYoWiKEOg
+Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGIxNjYyNDAzZjcwNThhMzdiZGRmOWQiLCJpYXQiOjE3NTc4MzkwNTcsImV4cCI6MTc1Nzg0OTg1N30.NVKPPqbwEo7tz12ymkaPKpmeEQqoaKmYGygEJT11qDY
 ### DELETE /notes/:noteId (Delete a member)
 @noteId = 68b168be83be487549a44f94
 DELETE  {{API}}/notes/{{noteId}}
-Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGIxNjYyNDAzZjcwNThhMzdiZGRmOWQiLCJpYXQiOjE3NTY0NTY0OTAsImV4cCI6MTc1NjQ2NzI5MH0.4zEgkFPOjuc0unTLG8zQNySBqNNvTPrML7YYoWiKEOg
+Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGIxNjYyNDAzZjcwNThhMzdiZGRmOWQiLCJpYXQiOjE3NTc4MzkwNTcsImV4cCI6MTc1Nzg0OTg1N30.NVKPPqbwEo7tz12ymkaPKpmeEQqoaKmYGygEJT11qDY
 
 ### PUT /notes/:noteId (Update a member )
 PUT  {{API}}/notes/{{noteId}}
-Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGIxNjYyNDAzZjcwNThhMzdiZGRmOWQiLCJpYXQiOjE3NTY0NTY0OTAsImV4cCI6MTc1NjQ2NzI5MH0.4zEgkFPOjuc0unTLG8zQNySBqNNvTPrML7YYoWiKEOg
+Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGIxNjYyNDAzZjcwNThhMzdiZGRmOWQiLCJpYXQiOjE3NTc4MzkwNTcsImV4cCI6MTc1Nzg0OTg1N30.NVKPPqbwEo7tz12ymkaPKpmeEQqoaKmYGygEJT11qDY
 Content-Type: application/json
 
 {
@@ -39,7 +39,7 @@ Content-Type: application/json
 
 ### PATCH /notes/:noteId (Partially update a member)
 PATCH  {{API}}/notes/{{noteId}}
-Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGIxNjYyNDAzZjcwNThhMzdiZGRmOWQiLCJpYXQiOjE3NTY0NTY0OTAsImV4cCI6MTc1NjQ2NzI5MH0.4zEgkFPOjuc0unTLG8zQNySBqNNvTPrML7YYoWiKEOg
+Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGIxNjYyNDAzZjcwNThhMzdiZGRmOWQiLCJpYXQiOjE3NTc4MzkwNTcsImV4cCI6MTc1Nzg0OTg1N30.NVKPPqbwEo7tz12ymkaPKpmeEQqoaKmYGygEJT11qDY
 Content-Type: application/json
 
 {

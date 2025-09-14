@@ -33,13 +33,20 @@ export const getAllNotes = async (req, res, next) => {
 			return next(err);
 		}
 
+		// Validate query
+		let filter = { userId };
+
+		for (let key in req.query) {
+			filter[key] = req.query[key];
+		}
+
 		// Find notes by userId
-		const notes = await Note.find({ userId: userId }).sort({ updatedAt: -1 });
+		const notes = await Note.find(filter).sort({ updatedAt: -1 });
+		const totalNotes = await Note.find(filter).sort({ updatedAt: -1 }).countDocuments();
 		res.status(200).json({
 			error: false,
 			message: "Get all notes successfully.",
-			data: notes,
-		});
+			data: {notes, totalNotes}})
 	} catch (err) {
 		next(err);
 	}
